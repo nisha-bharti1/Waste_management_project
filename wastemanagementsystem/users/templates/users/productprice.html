@@ -1,0 +1,28 @@
+{% extends 'users/usersnav.html' %}
+{% block title %} Title of the adminhome page {% endblock %}
+
+{% block body %}
+
+{% load static %}
+
+<div class="container text-center" style="margin-top: 100px;">
+    <h1>What would you like to buy with money ?</h1>
+    <div class="row">
+        {% for i in Products %}
+        <div class="col-xs-3 col-sm-3 col-md-3 mt-5">
+            <div class="card align-items-center" style="width: 18rem;">
+                <img src="/media/{{ i.image }}" class="card-img-top" alt="..." style="height:200px; width:18rem">
+                <div class="card-body">
+                    <h5 class="card-title" id="namepr">{{ i.product_name }}</h5>
+                    <p class="card-text">{{i.desc|slice:"25"}}...</p>
+                    <span id="divpr" class="divpr">
+                        <button id="pr" class="btn btn-primary cart">Add to cart</button>
+                    </span>
+                    <a href="#"><button id="qv" class="btn btn-primary cart">Quick View</button></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

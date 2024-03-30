@@ -1,0 +1,74 @@
+{%load static %}
+
+<head>
+    <title>Registration page </title> 
+    <link href="{% static 'users/css/bootstrap.min.css' %}" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap-icons.css' %}">
+    <style>
+        .contain{
+            margin:5% 25%;
+            width:50%;
+        }
+      </style>
+</head>
+
+{% block body %}
+
+<!-- <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel1">Create Account</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> -->
+<div class="container contain">
+    <form action=" {% url 'Home' %} " method="POST">{% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail2" class="form-label">Company Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" name="email" aria-describedby="emailHelp1">
+            <div id="emailHelp1" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputfirstName1" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="exampleInputfirstName1" name="firstname">
+        </div>
+       
+        <div class="mb-3">
+            <label for="exampleInputuserName" class="form-label">Create company Name</label>
+            <input type="text" class="form-control" id="exampleInputuserName" name="username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Create Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" name="password1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword3" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword3" name="password2">
+        </div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">
+                    Remember me
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <hr class="my-4">
+    <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+</div>
+</div>
+
+<!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal"
+                aria-hidden="true">Close</button>
+        </div>
+    </div>
+</div>
+</div> -->
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'wmsNav.html' %}
+{% block title %} Title of the adminhome page {% endblock %}
+
+{% block css %} 
+    
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            background-color: green;
+            padding: 10px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            top: auto;
+            bottom: auto;
+            margin-top: -250px;
+
+        }
+    
+{% endblock %}
+
+
+{% block body %}
+
+    {% load static %}
+
+
+    <!--carouselExample-->
+    <div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'sanitation worker.jpg' %}" class="d-block w-100" height="400px" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'image1.jpg' %}" class="d-block w-100" height="400px" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'waste.jpg' %}" class="d-block w-100" height="400px" alt="...">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Sign In Modal -->
+
+
+
+    <!--About us-->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'aboutus.jpg' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About us</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--why us-->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{% static 'why us.png' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                    width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Why us?</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--contact us-->
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5" id="contact">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Get in touch with us</h1>
+                <h4 class="text-secondary">Any question or remarks? Just write us a message!</h4>
+                <br>
+                <p class="col-lg-10 fs-4">Fill up the form and our Team will get back to you within 24 hours.</p>
+                <p class="col-lg-10 fs-4"><i class="bi bi-telephone-fill"></i> +91-478569847</p>
+                <p class="col-lg-10 fs-4"><i class="bi bi-envelope-fill"></i> Emailaddress@gmail.com</p>
+                <p class="col-lg-10 fs-4"><i class="bi bi-geo-alt-fill"></i> Address</p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Enter Your Name">
+                        <label for="floatingInput">Name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput1" placeholder="name@example.com">
+                        <label for="floatingInput1">Email address</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">How may help you?</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% block js %} 
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+            myInput.focus()
+        })
+
+      
+    </script>
+    {% endblock %}
+
+{% endblock %}
